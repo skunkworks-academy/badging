@@ -1,14 +1,6 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en-ZA">
 <head>
-  <!-- Skunkworks Academy global shell: managed -->
-  <meta name="skunkworks:org" content="skunkworks-academy" />
-  <meta name="skunkworks:repo" content="badging" />
-  <meta name="skunkworks:repo-sitemap" content="https://skunkworksacademy.com/repositories/" />
-  <link rel="stylesheet" href="https://skunkworksacademy.com/assets/academy-global.css?v=2026.06.24" data-skunkworks-global-style="v1" />
-  <link rel="sitemap" type="text/html" title="Skunkworks Academy Repository Sitemap" href="https://skunkworksacademy.com/repositories/" data-skunkworks-org-sitemap="v1" />
-  <script defer src="https://skunkworksacademy.com/assets/academy-navigation.js?v=2026.06.24" data-skunkworks-global-nav="v1"></script>
-  <!-- /Skunkworks Academy global shell: managed -->
   <meta charset="utf-8" data-skunkworks-head="mandatory-v1" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Skunkworks Academy Badge Hub | Unified Learning Ecosystem</title>
@@ -43,16 +35,7 @@
   </script>
 </head>
 <body>
-  <header class="top">
-  <!-- Skunkworks Academy global shell: managed -->
-  <meta name="skunkworks:org" content="skunkworks-academy" />
-  <meta name="skunkworks:repo" content="badging" />
-  <meta name="skunkworks:repo-sitemap" content="https://skunkworksacademy.com/repositories/" />
-  <link rel="stylesheet" href="https://skunkworksacademy.com/assets/academy-global.css?v=2026.06.24" data-skunkworks-global-style="v1" />
-  <link rel="sitemap" type="text/html" title="Skunkworks Academy Repository Sitemap" href="https://skunkworksacademy.com/repositories/" data-skunkworks-org-sitemap="v1" />
-  <script defer src="https://skunkworksacademy.com/assets/academy-navigation.js?v=2026.06.24" data-skunkworks-global-nav="v1"></script>
-  <!-- /Skunkworks Academy global shell: managed --><nav class="shell nav"><a class="brand" href="https://skunkworksacademy.com/">Skunkworks Academy</a><div class="links"><a href="https://skunkworksacademy.com/">Home</a><a href="https://portal.skunkworksacademy.com/">Portal</a><a href="https://labs.skunkworksacademy.com/">Labs</a><a href="https://security.skunkworksacademy.com/">Security</a><a href="https://ibm.skunkworksacademy.com/">IBM</a><a href="https://badge-hub.skunkworksacademy.com/">Badge Hub</a></div></nav></header>
-  <main class="shell"><section class="hero"><div><p class="eyebrow">Badge hub</p><h1>Credentials that show real progress.</h1><p class="lead">Discover, track and evidence learner badges across Skunkworks Academy programmes, certification pathways and career portfolios.</p><div class="actions"><a class="btn primary" href="mailto:training@skunkworks.africa">Request Badge Pathway</a><a class="btn" href="https://github.com/skunkworks-academy/badge-hub">View Repository</a></div></div><aside class="card"><div class="metric"><strong>Badges</strong><span>Unified Academy landing page</span></div><div class="metric"><strong>Evidence</strong><span>Track achievements and learning proof</span></div><div class="metric"><strong>GitHub</strong><span>Repo and directory structure ready</span></div></aside></section><section class="grid"><article class="tile"><h2>Credential pathways</h2><p>Map badge journeys to courses, practical labs, certification goals and learner portfolios.</p></article><article class="tile"><h2>Learner evidence</h2><p>Support skills validation with visible milestones, proof of work and completion tracking.</p></article><article class="tile"><h2>Career growth</h2><p>Connect Academy learning activity to employability and talent placement outcomes.</p></article></section><section class="repo-panel"><p class="eyebrow">Repository intelligence</p><h2>GitHub organisation and repo structure</h2><div class="repo-grid"><a class="repo-item" href="https://github.com/skunkworks-academy/badge-hub"><b>Current repository</b><span>skunkworks-academy/badge-hub</span></a><a class="repo-item" href="https://github.com/skunkworks-academy"><b>GitHub organisation</b><span>Browse Academy repositories and source structure.</span></a></div></section></main><footer class="footer"><div class="shell">Â© Skunkworks Academy. Dream. Design. Deliver.</div></footer>
+  <header class="top"><nav class="shell nav"><a class="brand" href="https://skunkworksacademy.com/">Skunkworks Academy</a><div class="links"><a href="https://skunkworksacademy.com/">Home</a><a href="https://portal.skunkworksacademy.com/">Portal</a><a href="https://labs.skunkworksacademy.com/">Labs</a><a href="https://security.skunkworksacademy.com/">Security</a><a href="https://ibm.skunkworksacademy.com/">IBM</a><a href="https://badge-hub.skunkworksacademy.com/">Badge Hub</a></div></nav></header>
+  <main class="shell"><section class="hero"><div><p class="eyebrow">Badge hub</p><h1>Credentials that show real progress.</h1><p class="lead">Discover, track and evidence learner badges across Skunkworks Academy programmes, certification pathways and career portfolios.</p><div class="actions"><a class="btn primary" href="mailto:training@skunkworks.africa">Request Badge Pathway</a><a class="btn" href="https://github.com/skunkworks-academy/badge-hub">View Repository</a></div></div><aside class="card"><div class="metric"><strong>Badges</strong><span>Unified Academy landing page</span></div><div class="metric"><strong>Evidence</strong><span>Track achievements and learning proof</span></div><div class="metric"><strong>GitHub</strong><span>Repo and directory structure ready</span></div></aside></section><section class="grid"><article class="tile"><h2>Credential pathways</h2><p>Map badge journeys to courses, practical labs, certification goals and learner portfolios.</p></article><article class="tile"><h2>Learner evidence</h2><p>Support skills validation with visible milestones, proof of work and completion tracking.</p></article><article class="tile"><h2>Career growth</h2><p>Connect Academy learning activity to employability and talent placement outcomes.</p></article></section><section class="repo-panel"><p class="eyebrow">Repository intelligence</p><h2>GitHub organisation and repo structure</h2><div class="repo-grid"><a class="repo-item" href="https://github.com/skunkworks-academy/badge-hub"><b>Current repository</b><span>skunkworks-academy/badge-hub</span></a><a class="repo-item" href="https://github.com/skunkworks-academy"><b>GitHub organisation</b><span>Browse Academy repositories and source structure.</span></a></div></section></main><footer class="footer"><div class="shell">© Skunkworks Academy. Dream. Design. Deliver.</div></footer>
 </body>
 </html>
-
