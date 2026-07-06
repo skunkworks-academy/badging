@@ -1,0 +1,9 @@
+{
+  "name": "skunkworks-academy-badging",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Badge Hub page for badge discovery, learner progress tracking and evidence capture.",
+  "engines": {
+    "node": ">=18"
+  }
+}
