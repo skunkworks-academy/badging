@@ -2,7 +2,13 @@
   "name": "skunkworks-academy-badging",
   "version": "1.0.0",
   "private": true,
-  "description": "Static Badge Hub page for badge discovery, learner progress tracking and evidence capture.",
+  "description": "Static Badge Hub page with validation, interaction simulation and lightweight load testing.",
+  "scripts": {
+    "test": "npm run validate && npm run simulate && npm run load:test",
+    "validate": "node tools/validate-site.mjs",
+    "simulate": "node tools/simulate-interactions.mjs",
+    "load:test": "node tools/load-test.mjs"
+  },
   "engines": {
     "node": ">=18"
   }
