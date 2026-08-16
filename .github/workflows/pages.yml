@@ -24,28 +24,50 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Inject Academy global shell into every HTML page
+      - name: Inject and verify Academy global shell on every HTML document
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          import re
 
-          loader = '<script defer src="https://skunkworksacademy.com/assets/academy-navigation.js?v=2026.08.15.2" data-skunkworks-global-shell="2026.08.15.2"></script>'
-          updated = 0
+          current = 'https://skunkworksacademy.com/assets/academy-navigation.js?v=2026.08.15.1'
+          marker = 'data-skunkworks-global-nav="v10"'
+          loader = f'<script defer src="{current}" {marker}></script>'
+          old_tags = re.compile(r'<script\b[^>]*(?:academy-navigation\.js|data-skunkworks-global-nav|data-skunkworks-global-shell)[^>]*>\s*</script>', re.I)
+          documents = []
+
           for path in Path('.').rglob('*.html'):
               if any(part in {'.git', 'node_modules'} for part in path.parts):
                   continue
               html = path.read_text(encoding='utf-8', errors='ignore')
-              if 'academy-navigation.js' in html or 'data-skunkworks-global-shell' in html:
+              if not re.search(r'<!doctype\s+html|<html\b|<head\b|<body\b', html, re.I):
                   continue
-              if '</head>' in html:
-                  html = html.replace('</head>', f'  {loader}\n</head>', 1)
-              elif '</body>' in html:
-                  html = html.replace('</body>', f'  {loader}\n</body>', 1)
+              html = old_tags.sub('', html)
+              if re.search(r'</head\s*>', html, re.I):
+                  html = re.sub(r'</head\s*>', f'  {loader}\n</head>', html, count=1, flags=re.I)
+              elif re.search(r'</body\s*>', html, re.I):
+                  html = re.sub(r'</body\s*>', f'  {loader}\n</body>', html, count=1, flags=re.I)
               else:
-                  continue
+                  raise SystemExit(f'Malformed HTML document cannot receive Academy shell: {path}')
               path.write_text(html, encoding='utf-8')
-              updated += 1
-          print(f'Academy global shell injected into {updated} HTML page(s).')
+              documents.append(path)
+
+          if not documents:
+              raise SystemExit('Badging deployment contains no HTML documents.')
+
+          missing = []
+          duplicate = []
+          for path in documents:
+              html = path.read_text(encoding='utf-8', errors='ignore')
+              if current not in html or marker not in html:
+                  missing.append(str(path))
+              if html.count('academy-navigation.js') > 1:
+                  duplicate.append(str(path))
+          if missing:
+              raise SystemExit('Missing Academy global shell: ' + ', '.join(missing))
+          if duplicate:
+              raise SystemExit('Duplicate Academy global shell: ' + ', '.join(duplicate))
+          print(f'Verified Academy canonical v10 shell on {len(documents)} Badging HTML document(s).')
           PY
 
       - name: Inject mobile UX assets
@@ -62,20 +84,27 @@ jobs:
           path.write_text(html)
           PY
 
-      - name: Verify global shell coverage
+      - name: Verify global shell coverage after local asset injection
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          current = 'https://skunkworksacademy.com/assets/academy-navigation.js?v=2026.08.15.1'
+          marker = 'data-skunkworks-global-nav="v10"'
           missing = []
+          duplicate = []
           for path in Path('.').rglob('*.html'):
               if any(part in {'.git', 'node_modules'} for part in path.parts):
                   continue
               text = path.read_text(encoding='utf-8', errors='ignore')
-              if 'academy-navigation.js' not in text and 'data-skunkworks-global-shell' not in text:
+              if current not in text or marker not in text:
                   missing.append(str(path))
+              if text.count('academy-navigation.js') > 1:
+                  duplicate.append(str(path))
           if missing:
               raise SystemExit('Missing Academy global shell: ' + ', '.join(missing))
-          print('Verified Academy global shell on every HTML page.')
+          if duplicate:
+              raise SystemExit('Duplicate Academy global shell: ' + ', '.join(duplicate))
+          print('Verified Academy canonical v10 shell on every HTML page.')
           PY
 
       - name: Setup Pages
